@@ -1,10 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import SearchBox from './SearchBox'
-import { TbGridDots } from 'react-icons/tb'
-import { RiSettings3Line } from 'react-icons/ri'
+'use client'
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import SearchBox from './SearchBox';
+import { TbGridDots } from 'react-icons/tb';
+import { RiSettings3Line } from 'react-icons/ri';
+
 export default function SearchHeader() {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <header className='sticky top-0 bg-white'>
       <div className='flex items-center justify-between w-full p-6'>
@@ -19,7 +24,7 @@ export default function SearchHeader() {
           />
         </Link>
         <div className='flex items-center justify-center flex-grow'>
-          <div className='mx-auto'><SearchBox /></div>
+          <div className='w-full'><SearchBox searchValue={searchValue} setSearchValue={setSearchValue} /></div>
         </div>
         <div className='hidden sm:flex'>
           <RiSettings3Line className='p-2 text-4xl bg-transparent rounded-full hover:bg-gray-200'/>
@@ -28,6 +33,5 @@ export default function SearchHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
-
