@@ -1,11 +1,13 @@
 'use client'
 
 import React, { useState } from 'react';
+import SearchHeaderOptions from './SearchHeaderOptions';
 import Link from 'next/link';
 import Image from 'next/image';
 import SearchBox from './SearchBox';
 import { TbGridDots } from 'react-icons/tb';
 import { RiSettings3Line } from 'react-icons/ri';
+import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
 
 export default function SearchHeader() {
   const [searchValue, setSearchValue] = useState('');
@@ -32,6 +34,7 @@ export default function SearchHeader() {
           <button className='px-4 py-2 font-medium text-white transition-shadow bg-blue-500 rounded-lg hover:brightness-105 hover:shadow-sm'>Sign In</button>
         </div>
       </div>
+      <SearchHeaderOptions/>
     </header>
   );
 }
