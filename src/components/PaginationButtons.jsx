@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import React from 'react'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
-export default function Pagination() {
+export default function PaginationButtons() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm');
